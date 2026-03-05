@@ -1,0 +1,4 @@
+﻿version: 1
+display_name: NestJS Senior Backend
+short_description: Senior workflow for NestJS/TypeScript refactoring, performance tuning, and CTO-level code review.
+default_prompt: Review this NestJS/TypeScript backend task as a CTO-level engineer, prioritizing performance bottlenecks, availability/resilience, scalable architecture, and OOP-driven refactoring with concrete fixes.
