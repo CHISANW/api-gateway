@@ -9,6 +9,7 @@ export class VisitController {
 
   @Post()
   async recordVisit(@Req() request: Request): Promise<void> {
+    console.log('여기에 접근은 하니거니 .. ? ');
     const ip = getClientIp(request);
     await this.visitService.recordVisit(ip);
   }
