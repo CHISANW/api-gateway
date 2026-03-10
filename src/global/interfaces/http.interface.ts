@@ -11,4 +11,5 @@ export interface IHttpRequestConfig {
   data?: any;
   params?: any;
   headers?: any;
+  responseType?: string;
 }

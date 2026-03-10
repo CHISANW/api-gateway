@@ -32,9 +32,13 @@ export function getClientIp(request: Request): string {
 }
 
 function normalizeIp(ip: string): string {
-  if (ip.includes(',')) {
-    return ip.split(',')[0].trim();
+  // x-forwarded-for는 콤마로 구분된 체인일 수 있음 (첫 번째가 실제 클라이언트)
+  const candidate = ip.includes(',') ? ip.split(',')[0].trim() : ip.trim();
+
+  // IPv6-mapped IPv4 주소 변환: ::ffff:192.168.1.1 → 192.168.1.1
+  if (candidate.startsWith('::ffff:')) {
+    return candidate.slice(7);
   }
 
-  return ip.trim();
+  return candidate;
 }

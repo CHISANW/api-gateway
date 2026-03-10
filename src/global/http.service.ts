@@ -19,6 +19,7 @@ export class HttpService {
       data: config.data,
       params: config.params,
       headers: config.headers,
+      responseType: config.responseType as any,
     };
 
     const response: AxiosResponse<T> =
