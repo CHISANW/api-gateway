@@ -2,6 +2,7 @@
 
 const IP_HEADER_CANDIDATES = [
   'x-forwarded-for',
+  'x-real-ip',
   'proxy-client-ip',
   'wl-proxy-client-ip',
   'http_client_ip',
